@@ -1,0 +1,10 @@
+/* 
+  myinfo.strings
+  changeLanguageInapp
+
+  Created by leo on 17/3/6.
+  Copyright © 2017年 huashen. All rights reserved.
+*/
+
+"测试文字" = "测试 test" ;
+"切换语言" = "切换语言 change language";

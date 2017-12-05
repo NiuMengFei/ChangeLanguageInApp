@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "中文"; ObjectID = "1cf-sO-bMh"; */
+"1cf-sO-bMh.normalTitle" = "中文";
+
+/* Class = "UIButton"; normalTitle = "英文"; ObjectID = "AW3-gw-11r"; */
+"AW3-gw-11r.normalTitle" = "英文";
+
+/* Class = "UILabel"; text = "这里显示多语言文字"; ObjectID = "DSy-00-3L4"; */
+"DSy-00-3L4.text" = "这里显示多语言文字";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "V2d-QY-EnQ"; */
+"V2d-QY-EnQ.title" = "Item 1";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "z6u-yW-nEL"; */
+"z6u-yW-nEL.title" = "Item 2";
