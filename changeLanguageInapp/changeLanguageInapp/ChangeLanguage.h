@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ChangeLanguage : NSObject
 
@@ -21,4 +22,7 @@
 
 // 获取设置后的语言
 +(NSString *)getLocalizedStringWithKey:(NSString *)key table:(NSString *)table;
+
+// 更改rootViewController
++(void)changeLanguageSettingAppDelegateRootViewController:(UIViewController *)viewController ;
 @end

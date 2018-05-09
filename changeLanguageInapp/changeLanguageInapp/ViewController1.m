@@ -30,35 +30,26 @@
     // 将所有的页面替换掉 所有的页面都会重新加载
     [ChangeLanguage changeLanguageInto:Chinese];
     
-    UIApplication *application = [UIApplication sharedApplication];
-    AppDelegate *delegate = application.delegate ;
-    delegate.window.rootViewController = nil ;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TabbarController *viewcon = [storyboard instantiateViewControllerWithIdentifier:@"TabbarController"];
-    delegate.window.rootViewController = viewcon ;
-    
+    [ChangeLanguage changeLanguageSettingAppDelegateRootViewController:viewcon] ;
 }
 
 - (IBAction)english:(UIButton *)sender {
     
    // 英文
     [ChangeLanguage changeLanguageInto:English];
-    UIApplication *application = [UIApplication sharedApplication];
-    AppDelegate *delegate = application.delegate ;
-    delegate.window.rootViewController = nil ;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TabbarController *viewcon = [storyboard instantiateViewControllerWithIdentifier:@"TabbarController"];
-    delegate.window.rootViewController = viewcon ;
+    [ChangeLanguage changeLanguageSettingAppDelegateRootViewController:viewcon] ;
+
 }
 
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     [ChangeLanguage sharedLanguageTool];
-    NSString *currentLanguage = [ChangeLanguage getCurrentLanguage];
-
     [self settingBthTitle];
 }
 

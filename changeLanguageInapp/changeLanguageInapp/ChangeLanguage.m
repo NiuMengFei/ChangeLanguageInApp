@@ -7,6 +7,7 @@
 //
 
 #import "ChangeLanguage.h"
+#import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
 /*
@@ -38,7 +39,7 @@ static ChangeLanguage *changeLanguagetool ;
 /*
  创建一个用于进行语言设置的单例对象
  */
-+(instancetype)sharedLanguageTool{
++ (instancetype)sharedLanguageTool{
     if (!changeLanguagetool) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
@@ -49,7 +50,7 @@ static ChangeLanguage *changeLanguagetool ;
     return changeLanguagetool ;
 }
 
-+(instancetype)allocWithZone:(struct _NSZone *)zone{
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
     static id istance = nil ;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -61,7 +62,7 @@ static ChangeLanguage *changeLanguagetool ;
  进行语言设置
  如果用户进行过语言设置，则加载用户设定的语言，如果没有设定为中文，在每次进入app时会调用
  */
-+(void)settinglanguage{
++ (void)settinglanguage{
     NSString *language = [[NSUserDefaults standardUserDefaults] valueForKey:UserLanguage];
     if (!language) {
         NSArray* languages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
@@ -90,16 +91,16 @@ static ChangeLanguage *changeLanguagetool ;
 /*
  重新设置appDelegate的RootViewController
  */
-#if 0
-+(void)changeLanguageSettingAppDelegateRootViewController:(){
-
++ (void)changeLanguageSettingAppDelegateRootViewController:(UIViewController *)viewController{
+    UIApplication *application = [UIApplication sharedApplication];
+    AppDelegate *delegate = application.delegate ;
+    delegate.window.rootViewController = nil ;
+    delegate.window.rootViewController = viewController ;
 }
-#endif
-
 /*
  获取当前语言类型
  */
-+(NSString *)getCurrentLanguage{
++ (NSString *)getCurrentLanguage{
     NSString *currentlanguage = [[NSUserDefaults standardUserDefaults] valueForKey:UserLanguage];
     return currentlanguage ;
 }
